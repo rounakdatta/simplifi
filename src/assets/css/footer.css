@@ -1,0 +1,66 @@
+footer.bg-dark a {
+  color: #fff;
+}
+
+.footer-1 .logo {
+  max-height: 100px;
+}
+
+.footer-1 .sub {
+  opacity: .5;
+}
+
+.social-list {
+  margin: 0;
+}
+
+.image-bg .social-list a {
+  color: #fff;
+}
+
+.bg-dark .social-list a,
+.image-bg .social-list a {
+  color: #fff;
+  opacity: .5;
+}
+
+.bg-dark .social-list a:hover {
+  opacity: 1;
+}
+
+.image-bg .social-list a {
+  opacity: 1;
+}
+
+.bg-light .social-list a {
+  color: #222;
+}
+
+.back-to-top {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+}
+
+.back-to-top:hover {
+  opacity: 1;
+}
+
+.bg-dark .back-to-top {
+  border-color: #fff;
+}
+
+.bg-dark .back-to-top:active,
+.bg-dark .back-to-top:focus {
+  color: #fff;
+}
+
+.bg-dark .back-to-top:hover {
+  background: none;
+}
+
+.fade-half {
+  opacity: 0.5;
+}
