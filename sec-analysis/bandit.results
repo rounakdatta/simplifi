@@ -1,9 +1,9 @@
-Run started:2019-04-11 17:19:05.253928
+Run started:2019-04-12 06:39:13.272618
 
 Test results:
 >> Issue: [B107:hardcoded_password_default] Possible hardcoded password: 'Admin'
    Severity: Low   Confidence: Medium
-   Location: source.Python:1
+   Location: ./source.Python:1
    More Info: https://bandit.readthedocs.io/en/latest/plugins/b107_hardcoded_password_default.html
 1	def someFunction(user, password="Admin"):
 2	    print("Hi " + user)
@@ -14,7 +14,7 @@ Test results:
 --------------------------------------------------
 >> Issue: [B105:hardcoded_password_string] Possible hardcoded password: 'root'
    Severity: Low   Confidence: Medium
-   Location: source.Python:5
+   Location: ./source.Python:5
    More Info: https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html
 4	def someFunction2(password):
 5	    if password == "root":
@@ -23,7 +23,7 @@ Test results:
 --------------------------------------------------
 >> Issue: [B105:hardcoded_password_string] Possible hardcoded password: ''
    Severity: Low   Confidence: Medium
-   Location: source.Python:9
+   Location: ./source.Python:9
    More Info: https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html
 8	def noMatch(password):
 9	    if password == '':
@@ -32,7 +32,7 @@ Test results:
 --------------------------------------------------
 >> Issue: [B105:hardcoded_password_string] Possible hardcoded password: 'ajklawejrkl42348swfgkg'
    Severity: Low   Confidence: Medium
-   Location: source.Python:13
+   Location: ./source.Python:13
    More Info: https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html
 12	def NoMatch2(password):
 13	    if password == "ajklawejrkl42348swfgkg":
@@ -41,7 +41,7 @@ Test results:
 --------------------------------------------------
 >> Issue: [B107:hardcoded_password_default] Possible hardcoded password: 'blerg'
    Severity: Low   Confidence: Medium
-   Location: source.Python:16
+   Location: ./source.Python:16
    More Info: https://bandit.readthedocs.io/en/latest/plugins/b107_hardcoded_password_default.html
 15	
 16	def doLogin(password="blerg"):
@@ -52,7 +52,7 @@ Test results:
 --------------------------------------------------
 >> Issue: [B106:hardcoded_password_funcarg] Possible hardcoded password: 'blerg'
    Severity: Low   Confidence: Medium
-   Location: source.Python:22
+   Location: ./source.Python:22
    More Info: https://bandit.readthedocs.io/en/latest/plugins/b106_hardcoded_password_funcarg.html
 21	
 22	doLogin(password="blerg")
@@ -61,7 +61,7 @@ Test results:
 --------------------------------------------------
 >> Issue: [B105:hardcoded_password_string] Possible hardcoded password: 'blerg'
    Severity: Low   Confidence: Medium
-   Location: source.Python:23
+   Location: ./source.Python:23
    More Info: https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html
 22	doLogin(password="blerg")
 23	password = "blerg"
@@ -70,7 +70,7 @@ Test results:
 --------------------------------------------------
 >> Issue: [B105:hardcoded_password_string] Possible hardcoded password: 'blerg'
    Severity: Low   Confidence: Medium
-   Location: source.Python:24
+   Location: ./source.Python:24
    More Info: https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html
 23	password = "blerg"
 24	d["password"] = "blerg"

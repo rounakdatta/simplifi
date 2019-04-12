@@ -13,7 +13,7 @@ cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-	return render_template('index.html')
+	return 'OK'
 
 @app.route('/ping', methods=['GET', 'POST'])
 def ping():
@@ -34,11 +34,12 @@ def ping():
     codeLanguage = codeJson['result']['language']
     codeSource = codeJson['result']['code']
 
-    fileName = 'source.' + codeLanguage
+    fileName = './source.' + codeLanguage
 
     f = open(fileName, 'w')
     f.write(codeSource)
     f.close()
+    print(fileName)
 
     if codeLanguage == 'Python':
         os.system("bandit " + fileName + " > bandit.results")
@@ -57,8 +58,6 @@ def ping():
 
 @app.route('/api/check/cve', methods=['GET', 'POST'])
 def cve():
-
-
     return 'success'
 
 if __name__ == '__main__':
