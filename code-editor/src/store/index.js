@@ -268,6 +268,14 @@ export default new Vuex.Store({
 
       // tell the flaskk server to get the code from jsonstore
       axios.get("http://localhost:5000/ping", { crossdomain: true })
+      .then(({data}) => {
+        console.log(data);
+
+        if (data['title'] != undefined) {
+          alert("Found a serious vulnerability: " + data['title']);
+          var win = window.open(data['url'], '_blank');
+        }
+      })
     
       return axios.post('https://judge.cb.lk/api/submission', {
         lang,
