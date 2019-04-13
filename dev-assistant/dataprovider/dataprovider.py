@@ -1,7 +1,7 @@
 import wolframalpha
 import wikipedia
 import logging
-import pymongo
+#import pymongo
 
 def form_sentence(words_bucket):
 	if words_bucket.count() == 1:
@@ -26,12 +26,16 @@ class DataProvider(object):
 		self.wolfram_client = wolframalpha.Client(app_id)
 		logging.info("connected to wolfram")
 
-		self.myclient = pymongo.MongoClient("mongodb://localhost:27017/")
-		self.mydb = self.myclient["digitalAssistant"]
-		self.shopData = self.mydb["shopData"]
 
-		print(self.myclient.list_database_names())
-		logging.info("connected to MongoDB")
+		try:
+			self.myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+			self.mydb = self.myclient["digitalAssistant"]
+			self.shopData = self.mydb["shopData"]
+
+			print(self.myclient.list_database_names())
+			logging.info("connected to MongoDB")
+		except:
+			pass
 
 	def get_short_answer(self, query):
 		logging.info("searching in mongodb: {}".format(query))
