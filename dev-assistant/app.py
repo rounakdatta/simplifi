@@ -15,6 +15,7 @@ from datetime import datetime, timedelta
 from googleSearcher import google_search
 from cveSearcher import cveSearcher
 
+
 app = Flask(__name__)
 CORS(app, support_credentials=True)
 
@@ -45,6 +46,10 @@ def process_msg(data, rasa_nlu):
 	if (data.split(" ")[0]) == 'github':
 		githubDetails = data.split(" ")[-1]
 		return 'github', githubDetails
+
+	if (data.split(" ")[0]) == 'boilerplate':
+		codeDetails = ' '.join(data.split(" ")[1:])
+		return 'boilerplate', codeDetails
 
 	if (data.split(" ")[0]) == 'reminder':
 		reminderDetails = ' '.join(data.split(" ")[1:])
@@ -138,6 +143,16 @@ def process():
 		print('received at flask server : ' + myPayload)
 
 		chatContext, chatReply = process_msg(myPayload, rasa_nlu)
+
+		if chatContext == 'boilerplate':
+			if chatReply == 'flask':
+				f = open('boilerplate.flask', 'r')
+				chatReply = f.read()
+			if chatReply == 'firebase':
+				f = open('boilerplate.firebase', 'r')
+				chatReply = f.read()
+
+			return json.dumps({"context": "boilerplate", "reply": chatReply})
 
 		if chatContext == 'reminder':
 			print(chatReply)

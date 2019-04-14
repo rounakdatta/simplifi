@@ -1171,6 +1171,9 @@ function userSend(text) {
 
                     $('#tt').val("");
 
+
+                   } else if (JSON.parse(resultOfSearch)["context"] == "boilerplate") {
+                    adminSend(queryReply);
                   
           			   } else {
                         adminSend(queryReply);
